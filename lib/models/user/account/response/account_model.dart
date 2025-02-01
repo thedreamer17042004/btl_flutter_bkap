@@ -27,8 +27,8 @@ class Account {
   factory Account.fromJson(Map<String, dynamic> json) {
     return Account(
       id: json['id'],
-      avatar: json['content'],
-      email: json['postId'],
+      avatar: json['avatar'],
+      email: json['email'],
       userName: json['userName'],
       address:json['address'],
       gender:json['gender'],

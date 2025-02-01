@@ -37,4 +37,7 @@ const String postSearchUri = "$apiUri/post/search";
 const String postDetailUri = "$apiUri/post";
 const String postCommentUri = "$apiUri/comment";
 
+//order
+const String orderUri = "$apiUri/order/create";
+
 

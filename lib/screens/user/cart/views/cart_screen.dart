@@ -1,6 +1,7 @@
 
 
 import 'package:ecommerce_sem4/models/user/cart/response/cart_list_response.dart';
+import 'package:ecommerce_sem4/screens/user/cart/views/components/bottom_button_cart.dart';
 import 'package:ecommerce_sem4/screens/user/cart/views/components/item_cart.dart';
 import 'package:ecommerce_sem4/screens/user/onboarding/views/components/onboarding_dashed_line.dart';
 import 'package:ecommerce_sem4/screens/user/product/views/components/bottom_button.dart';
@@ -262,8 +263,8 @@ class _CartScreen extends State<CartScreen>{
                     ),
                   ),
                 ),
-                // Bottom checkout button
-                // BottomButton(buttonName: "Checkout",event: (){}, quantity: 0 , price: 1.0,),
+
+                BottomButtonCart(buttonName: "Checkout",totalPrice: double.parse(price),event: () => {},)
               ],
             ),
           )

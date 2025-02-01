@@ -51,7 +51,7 @@ class _AnwserComment extends State<AnswerComment>{
              child: ClipRRect(
                  borderRadius:  BorderRadius.circular(50),
                  child: Image.network(
-                   '$imageUrl${widget.avatar!}',
+                   '$imageUrl${(widget.avatar!=null?widget.avatar:"1.png")}',
                    // height: 100,
                    fit: BoxFit.fill,
                    errorBuilder: (context, error, stackTrace) => Image.asset("assets/user/images/avatar-1.png"), // Optional error handling

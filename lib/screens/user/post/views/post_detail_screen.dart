@@ -198,7 +198,7 @@ class _PostDetail extends State<PostDetailScreen>{
                                         accountName: entry.account.userName!,
                                         content: entry!.content,
                                         createdAt: entry.createdAt,
-                                        avatar: entry.account.avatar!,
+                                        avatar: entry.account.avatar,
                                       )
 
                                        ).toList() ?? [],

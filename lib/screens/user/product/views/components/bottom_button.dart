@@ -37,12 +37,14 @@ class BottomButton extends StatelessWidget{
                    ),
                  ),
                  Text(
-                   formatCurrency.format( (quantity*price)),
+                   (quantity==0
+                       ?  formatCurrency.format(price)
+                       : formatCurrency.format(quantity * (price as num))
+                   ),
                    style: const TextStyle(
                      fontWeight: FontWeight.bold,
                      fontSize: 20,
                      color: whiteColor,
-
                    ),
                  )
                ],
