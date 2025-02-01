@@ -41,5 +41,9 @@ const String postCommentUri = "$apiUri/comment";
 const String orderUri = "$apiUri/order/create";
 const String userOrderUri = "$apiUri/order/user-orders";
 
+//account
+const String getByIdAccountUri = "$apiUri/account";
+const String updateAccountUri = "$apiUri/account/user";
+
 
 

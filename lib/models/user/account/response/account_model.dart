@@ -11,7 +11,9 @@ class Account {
   String? address;
   String? gender;
   String? phoneNumber;
-  DateTime? createdAt;
+
+  String? password;
+  String? roleName;
 
   Account({
      this.id,
@@ -21,7 +23,9 @@ class Account {
     this.address,
     this.gender,
     this.phoneNumber,
-    this.createdAt
+
+    this.password,
+    this.roleName
   });
 
   factory Account.fromJson(Map<String, dynamic> json) {
@@ -31,9 +35,10 @@ class Account {
       email: json['email'],
       userName: json['userName'],
       address:json['address'],
-      gender:json['gender'],
+      gender:json['gender']==true?'Male':'Female',
       phoneNumber: json['phoneNumber'],
-      createdAt: DateTime.parse(json['createdAt']),
+      password: json['passwordHash'],
+        roleName: json['roleName']
     );
   }
 }

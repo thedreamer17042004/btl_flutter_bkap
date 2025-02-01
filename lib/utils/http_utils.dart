@@ -48,4 +48,17 @@ class HttpUtils {
       throw Exception('Error making request: $error');
     }
   }
+
+  Future<http.Response> put(String uri, Map<String, String> headers, Object request) async{
+    try{
+      final response = await http.put(
+        Uri.parse(uri),
+        headers: headers,
+        body: jsonEncode(request),
+      );
+      return response;
+    }catch(error){
+      throw Exception('Error making request: $error');
+    }
+  }
 }
