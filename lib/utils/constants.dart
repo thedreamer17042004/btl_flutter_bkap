@@ -39,5 +39,7 @@ const String postCommentUri = "$apiUri/comment";
 
 //order
 const String orderUri = "$apiUri/order/create";
+const String userOrderUri = "$apiUri/order/user-orders";
+
 
 
