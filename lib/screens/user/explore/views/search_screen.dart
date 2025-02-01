@@ -1,6 +1,5 @@
 import 'package:ecommerce_sem4/models/user/product/request/search_request.dart';
 import 'package:ecommerce_sem4/models/user/product/response/product_model.dart';
-import 'package:ecommerce_sem4/route/user/router_constants.dart';
 import 'package:ecommerce_sem4/screens/user/home/views/components/card_product_component.dart';
 import 'package:ecommerce_sem4/screens/user/product/views/filter_product_screen.dart';
 import 'package:ecommerce_sem4/services/user/auth/auth_service.dart';

@@ -4,9 +4,9 @@ import 'package:ecommerce_sem4/components/navigator/bottom_navigator_bar_compone
 import 'package:ecommerce_sem4/screens/user/account/views/account_screen.dart';
 import 'package:ecommerce_sem4/screens/user/cart/views/cart_screen.dart';
 import 'package:ecommerce_sem4/screens/user/explore/views/explore_navigator.dart';
-import 'package:ecommerce_sem4/screens/user/explore/views/shop_screen.dart';
 import 'package:ecommerce_sem4/screens/user/favourite/views/favourite_screen.dart';
 import 'package:ecommerce_sem4/screens/user/home/views/home_screen.dart';
+import 'package:ecommerce_sem4/screens/user/post-category/views/post_category_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +25,7 @@ class LayoutPage extends State<LayoutScreen>{
     const ExploreNavigator(),
     const CartScreen(),
     const FavouriteScreen(),
+    const PostCategoryScreen(),
     const AccountScreen()
   ];
 

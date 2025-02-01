@@ -28,4 +28,24 @@ class HttpUtils {
       throw Exception('Error making request: $error');
     }
   }
+  Future<http.Response> get(String uri, Map<String, String> headers) async {
+    try {
+      final response = await http.get(
+        Uri.parse(uri),
+        headers: headers,
+      );
+
+      print("Action GET");
+      print("Status Code: ${response.statusCode}");
+      print("Response Body: ${response.body}");
+
+      if (response.statusCode == 200) {
+        return response;
+      } else {
+        throw Exception('Failed request: ${response.statusCode}, ${response.body}');
+      }
+    } catch (error) {
+      throw Exception('Error making request: $error');
+    }
+  }
 }

@@ -39,6 +39,10 @@ class BottomNavBar extends StatelessWidget {
           label: 'Favourite',
         ),
         BottomNavigationBarItem(
+          icon: Icon(Icons.newspaper),
+          label: 'Post',
+        ),
+        BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'Account',
         ),

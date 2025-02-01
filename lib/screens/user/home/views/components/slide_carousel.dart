@@ -1,6 +1,9 @@
+
 import 'package:ecommerce_sem4/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart' hide CarouselController;
+
 
 class HomeSlide extends StatefulWidget {
   @override
@@ -8,7 +11,7 @@ class HomeSlide extends StatefulWidget {
 }
 
 class _CarouselWithThreeSlidesState extends State<HomeSlide> {
-  final CarouselController _controller = CarouselController(); // Create a CarouselController
+  final CarouselSliderController _controller = CarouselSliderController(); // Create a CarouselController
   final List<String> imgList = [
     'assets/user/images/slide1.jpg',
     'assets/user/images/slide2.jpg',

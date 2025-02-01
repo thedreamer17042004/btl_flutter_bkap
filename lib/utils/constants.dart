@@ -29,5 +29,12 @@ const String updateQuantityUri = "$apiUri/cart/update";
 const String getCartByUserIdUri = "$apiUri/cart/getCart";
 const String removeCartUri = "$apiUri/cart";
 
+// post-category
+const String postCategorySearchUri = "$apiUri/postcategory/search";
+const String postCategoryDetailUri = "$apiUri/postcategory";
+//post
+const String postSearchUri = "$apiUri/post/search";
+const String postDetailUri = "$apiUri/post";
+const String postCommentUri = "$apiUri/comment";
 
 
