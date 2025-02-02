@@ -34,10 +34,10 @@ class BottomNavBar extends StatelessWidget {
           icon: Icon(Icons.shopify),
           label: 'Cart',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
-          label: 'Favourite',
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.favorite),
+        //   label: 'Favourite',
+        // ),
         BottomNavigationBarItem(
           icon: Icon(Icons.newspaper),
           label: 'Post',

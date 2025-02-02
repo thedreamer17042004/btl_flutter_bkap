@@ -24,7 +24,7 @@ class LayoutPage extends State<LayoutScreen>{
     const HomeScreen(),
     const ExploreNavigator(),
     const CartScreen(),
-    const FavouriteScreen(),
+    // const FavouriteScreen(),
     const PostCategoryScreen(),
     const AccountScreen()
   ];
