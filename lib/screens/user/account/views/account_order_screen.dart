@@ -93,11 +93,11 @@ class _AccountOrderScreen extends State<AccountOrderScreen>{
                             ),
                             onPressed: () {
                               Navigator.pop(context);
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                     const AccountScreen()));
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) =>
+                              //        const AccountScreen()));
                             },
                             color: whiteColor,
                           ),

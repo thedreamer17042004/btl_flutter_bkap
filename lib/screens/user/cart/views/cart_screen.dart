@@ -167,7 +167,7 @@ class _CartScreen extends State<CartScreen>{
                             final cartItem = entry.value;
 
                             return ItemCart(
-                              key: ValueKey(cartItem.productId),
+                              key: ValueKey(index),
                               cartResponse: cartItem,
                               onDelete: () => _removeItem(cartItem, index),
                               onUpdateQuantity: (quantity) => _updateQuantity(cartItem, quantity),
