@@ -1,7 +1,9 @@
 
 
 import 'package:ecommerce_sem4/route/user/router_constants.dart';
+import 'package:ecommerce_sem4/screens/user/account/views/account_order_screen.dart';
 import 'package:ecommerce_sem4/screens/user/account/views/components/item_component.dart';
+import 'package:ecommerce_sem4/screens/user/account/views/components/user_detail_modal_component.dart';
 import 'package:ecommerce_sem4/services/user/auth/auth_service.dart';
 import 'package:ecommerce_sem4/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,6 +16,40 @@ class AccountScreen extends StatelessWidget{
   void logout(BuildContext context) {
     AuthService().logout();
     Navigator.pushReplacementNamed(context, onboardingScreenRoute);
+  }
+
+  void redirectToUserOrder(BuildContext context) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+            const AccountOrderScreen()));
+  }
+
+  // Function to show the UserDetailsModal
+  void _showUserDetailsModal(BuildContext context) {
+    // showModalBottomSheet(
+    //   context: context,
+    //   isScrollControlled: true,
+    //   builder: (BuildContext context) {
+    //     return UserDetailsModal();
+    //   },
+    // );
+    showDialog(
+      context: context,
+      barrierDismissible: false, // Optional: If you want to prevent dismissing by tapping outside the dialog
+      builder: (BuildContext context) {
+        return Dialog(
+          insetPadding: EdgeInsets.zero, // Remove padding around the dialog
+          backgroundColor: Colors.white, // Optional: Remove background color if needed
+          child: Container(
+            width: double.infinity, // Ensure the child widget takes full width
+            padding: EdgeInsets.all(0), // Remove any internal padding
+            child: UserDetailsModal(),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -90,8 +126,8 @@ class AccountScreen extends StatelessWidget{
                           children: [
                             Column(
                               children: [
-                                IconButton(onPressed: (){}, icon: Icon(Icons.shop)),
-                                Text("Orders",
+                                IconButton(onPressed: () {redirectToUserOrder(context);}, icon: const Icon(Icons.shop)),
+                               const Text("Orders",
                                   style: TextStyle(
                                       color: Colors.black87,
                                       fontWeight: FontWeight.bold,
@@ -102,8 +138,8 @@ class AccountScreen extends StatelessWidget{
                             ),
                             Column(
                               children: [
-                                IconButton(onPressed: (){}, icon: Icon(Icons.payment)),
-                                Text("Payments",
+                                IconButton(onPressed: (){}, icon: const Icon(Icons.payment)),
+                               const Text("Payments",
                                   style: TextStyle(
                                       color: Colors.black87,
                                       fontWeight: FontWeight.bold,
@@ -114,8 +150,8 @@ class AccountScreen extends StatelessWidget{
                             ),
                             Column(
                               children: [
-                                IconButton(onPressed: (){}, icon: Icon(Icons.location_city)),
-                                Text("Address",
+                                IconButton(onPressed: (){}, icon: const Icon(Icons.location_city)),
+                               const Text("Address",
                                   style: TextStyle(
                                       color: Colors.black87,
                                       fontWeight: FontWeight.bold,
@@ -131,11 +167,11 @@ class AccountScreen extends StatelessWidget{
 
                   ),
                 ),
-                SizedBox(height: 30,),
+               const SizedBox(height: 30,),
                 Container(
                   child: Column(
                     children: [
-                      ItemComponent(text: "User Details", iconButton: const Icon(Icons.account_circle), event: (){}),
+                      ItemComponent(text: "User Details", iconButton: const Icon(Icons.account_circle), event: (){_showUserDetailsModal(context);}),
                       const SizedBox(height: 15,),
                       ItemComponent(text: "Settings", iconButton:const Icon(Icons.settings), event: (){}),
                       const  SizedBox(height: 15,),

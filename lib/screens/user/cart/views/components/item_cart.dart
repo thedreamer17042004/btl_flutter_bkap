@@ -45,9 +45,9 @@ class _ItemCart extends State<ItemCart>{
     _updateQuantity(updatedQuantity);
   }
 
-   _updateQuantity(int newQuantity) {
-     widget.onUpdateQuantity!(newQuantity);
-    }
+  _updateQuantity(int newQuantity) {
+    widget.onUpdateQuantity!(newQuantity);
+  }
 
   Future<void> _removeItem() async {
     widget.onDelete!();
@@ -87,58 +87,64 @@ class _ItemCart extends State<ItemCart>{
             //       )
             //   ),
             // ),
-        Container(
-        margin: const EdgeInsets.all(6),
-        width: 100,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey,
-            width: 1,
-          ),
-          borderRadius: BorderRadius.circular(10),
-          shape: BoxShape.rectangle,
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10), // To match the border radius of the Container
-          child: Image.network(
-            '$imageUrl${widget.cartResponse?.product.image}', // Replace with your image URL
-            fit: BoxFit.contain,
-            errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
-              // Fallback image in case of an error
-              return Image.asset(
-                "assets/user/images/category_6.png",
-                fit: BoxFit.contain,
-              );
-            },
-            // loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-            //   if (loadingProgress == null) return child; // Image loaded successfully
-            //   return Center(
-            //       child: CircularProgressIndicator(
-            //         value: loadingProgress.expectedTotalBytes != null
-            //             ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
-            //             : null,
-            //       ); // Loading indicator
-            //   );
-            // },
-          ),
-        ),
-      ),
+            Container(
+              margin: const EdgeInsets.all(6),
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(10),
+                shape: BoxShape.rectangle,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10), // To match the border radius of the Container
+                child: Image.network(
+                  '$imageUrl${widget.cartResponse?.product.image}', // Replace with your image URL
+                  fit: BoxFit.contain,
+                  errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
+                    // Fallback image in case of an error
+                    return Image.asset(
+                      "assets/user/images/category_6.png",
+                      fit: BoxFit.contain,
+                    );
+                  },
+                  // loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                  //   if (loadingProgress == null) return child; // Image loaded successfully
+                  //   return Center(
+                  //       child: CircularProgressIndicator(
+                  //         value: loadingProgress.expectedTotalBytes != null
+                  //             ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
+                  //             : null,
+                  //       ); // Loading indicator
+                  //   );
+                  // },
+                ),
+              ),
+            ),
 
-        Padding(
-              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
               child: Column(
+
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    widget.cartResponse!.product.productName,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        color: Colors.black87,
-                        fontSize: 17
+
+                  SizedBox(
+                    width: 100,
+                    child: Text(
+                      softWrap: true,
+                      widget.cartResponse!.product.productName,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          color: Colors.black87,
+                          fontSize: 17
+                      ),
                     ),
                   ),
-                 const Text(
+                  const Text(
                     "Fruit",
                     style:  TextStyle(
                         color: Colors.grey,
@@ -147,7 +153,7 @@ class _ItemCart extends State<ItemCart>{
                     ),
                   ),
                   Text(
-                      widget.cartResponse!.product.price.toString(),
+                    widget.cartResponse!.product.price.toString(),
                     style: const TextStyle(
                         color: greenBgColor,
                         fontWeight: FontWeight.bold
